@@ -1,0 +1,14 @@
+# ------------------------------
+# ホストに対してPing実施
+# ------------------------------
+
+---
+- hosts: all
+  sudo: yes
+  user: ansible
+
+  tasks:
+    - group:
+       name: unix
+       gid: 2000
+#       state: absent      #削除時にコメントアウト解除する 
