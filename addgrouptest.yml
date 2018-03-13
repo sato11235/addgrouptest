@@ -8,7 +8,7 @@
   user: ansible
 
   vars_files:
-    ./vars/groups.yml
+    - ./vars/groups.yml
 
   tasks:
     - name: addusers
