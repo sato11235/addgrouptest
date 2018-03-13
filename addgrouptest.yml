@@ -12,8 +12,8 @@
 
   tasks:
     - group:
-       name: {{ item.name }}
-       gid: {{ item.gid }}
+       name: "{{ item.name }}"
+       gid: "{{ item.gid }}"
 #       state: absent      #削除時にコメントアウト解除する 
-    with_items: 
-      - {{ groups }}
+      with_items: 
+        - "{{ groups }}"
