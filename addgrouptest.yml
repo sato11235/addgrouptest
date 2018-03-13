@@ -1,14 +1,19 @@
 # ------------------------------
-# ホストに対してPing実施
+# グループを作成する
 # ------------------------------
 
 ---
 - hosts: all
-  sudo: yes
+  sudo: true
   user: ansible
+
+  var_files:
+    ./vars/groups.yml
 
   tasks:
     - group:
-       name: unix
-       gid: 2000
+       name: {{ item.name }}
+       gid: {{ item.gid }}
 #       state: absent      #削除時にコメントアウト解除する 
+    with_items: 
+      - {{ groups }}
